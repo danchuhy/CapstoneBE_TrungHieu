@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "7947f34a-e220-4fe7-be2a-08639666b52e",
+		"name": "Capstone_BE_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31890343"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hieu.dt.04061@gmail.com\",\n    \"mat_khau\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ho_ten\": \"Dang Trung Hieu\",\n    \"email\": \"hieu.dt.0406@gmail.com\",\n    \"mat_khau\": \"password01\",\n    \"tuoi\": 24,\n    \"anh_dai_dien\": \"avatar_01.jpq\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get user detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/user/get-user-detail/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"get-user-detail",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hieu.dt.04061@gmail.com\",\n    \"mat_khau\": \"admin1\",\n    \"ho_ten\": \"Dang Trung Hieu 1\",\n    \"tuoi\": 20,\n    \"anh_dai_dien\": \"avatar_011.jpq\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user/update-user-detail/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"update-user-detail",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hinh_id\": 3,\n    \"noi_dung\": \"Cool\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/comment/create-comment/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"comment",
+								"create-comment",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment list by image / {imageId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/comment/get-comment-list-by-image/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"comment",
+								"get-comment-list-by-image",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Get image list created by user / {IUserId}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/image/get-image-list-created-by-user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"image",
+								"get-image-list-created-by-user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get image detail / {ImageId}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/image/get-image-detail/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"image",
+								"get-image-detail",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nguoi_dung_id\": 6,\n    \"ten_hinh\": \"Hinh dam cuoi\",\n    \"mo_ta\": \"Dam cuoi Hieu - Tien\",\n    \"duong_dan\": \"Wedding01.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/image/create-image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"image",
+								"create-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete image / {ImageId}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZ3VvaV9kdW5nX2lkIjo2LCJpYXQiOjE3MDU2MzQ0NjAsImV4cCI6MTczNzE5MjA2MH0.QAvSCXQQAh4JY8a-yXcwrtyjKtD4bpV0pN2ukP6EbCw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nguoi_dung_id\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/image/delete-image/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"image",
+								"delete-image",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get image list by filter",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get image list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/image/get-image-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"image",
+								"get-image-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Saved Image",
+			"item": [
+				{
+					"name": "Is saved image / {ImageId}",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get saved image list by user / {UserId}",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
